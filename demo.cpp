@@ -7,6 +7,7 @@ using namespace std;
 void registration();
 void login();
 void traindetails();
+void traincheck();
 void bookTicket();
 void generateReceipt(string name, int age,string from,string to, int tickets, string trainName, int distance, int pricePerTicket, int discount);
 
@@ -39,6 +40,10 @@ int main() {
             break;
 
         case 4:
+             traincheck();
+             break;
+
+        case 5:
             cout << "Exiting...\n";
             cout << "~~~~~ code by   23AIML031\n\t\t23AIML035\n\t\t23AIML045";
 
@@ -118,6 +123,40 @@ void traindetails() {
         traindetailFile.close();
     } else {
         cout << "Error opening file for registration.\n";
+    }
+
+}
+
+void traincheck()
+{
+    string railname, railcode, railfare;
+    cout << "Enter railname: ";
+    cin >> railname;
+    cout << "Enter railcode: ";
+    cin >> railcode;
+    cout << "Enter railfair: ";
+    cin >> railfare;
+
+    ifstream traindetailFile("traindetail.txt");
+    string line;
+    bool found = false;
+    while (getline(traindetailFile, line)) {
+        size_t pos = line.find(' ');
+        string storedrailname = line.substr(0, pos);
+        string storedrailcode = line.substr(pos + 1);
+        string storedrailfare = line.substr(pos + 2);
+        if (railname == storedrailname && railcode == storedrailcode && railfare == storedrailfare) {
+            found = true;
+            break;
+        }
+    }
+    traindetailFile.close();
+
+    if (found) {
+        cout << "Login successful!\n";
+    //    bookTicket();
+    } else {
+        cout << "Invalid username or password.\n";
     }
 
 }
