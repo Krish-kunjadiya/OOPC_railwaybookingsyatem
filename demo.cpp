@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
+#include<ctime>
 
 using namespace std;
 
@@ -151,16 +153,7 @@ void traincheck()
         }
     }
     traindetailFile.close();
-
-    if (found) {
-        cout << "Login successful!\n";
-    //    bookTicket();
-    } else {
-        cout << "Invalid username or password.\n";
-    }
-
 }
-
 void bookTicket() {
 
     string name,from,to;
@@ -199,38 +192,38 @@ void bookTicket() {
     switch (trainChoice) {
         case 1:
             selectedTrain = "Maharajas' Express";
-            distance = 500;
-            pricePerTicket = 1000;
+            //distance = 500;
+           // pricePerTicket = 1000;
             break;
 
         case 2:
             selectedTrain = "The Golden Chariot";
-            distance = 700;
-            pricePerTicket = 1200;
+           // distance = 700;
+            //pricePerTicket = 1200;
             break;
 
         case 3:
             selectedTrain = "Deccan Odyssey";
-            distance = 250;
-            pricePerTicket = 1200;
+           // distance = 250;
+           // pricePerTicket = 1200;
             break;
 
         case 4:
             selectedTrain = "Vande Bharat";
-            distance = 150;
-            pricePerTicket = 900;
+            //distance = 150;
+            //pricePerTicket = 900;
             break;
 
         case 5:
             selectedTrain = "Tejas Express";
-            distance = 100;
-            pricePerTicket = 120;
+            //distance = 100;
+            //pricePerTicket = 120;
             break;
 
         case 6:
             selectedTrain = "Gareeb Rath";
-            distance = 100;
-            pricePerTicket = 60;
+            //distance = 100;
+            //pricePerTicket = 60;
             break;
         default:
             cout << "Invalid train choice.\n";
@@ -268,10 +261,17 @@ void bookTicket() {
 }
 
 void generateReceipt(string name, int age,string from,string to, int tickets, string trainName, int distance, int pricePerTicket, int discount) {
-    int totalPrice = tickets * pricePerTicket;
-    float discountedPrice = totalPrice - discount;
-    float totalPriceWithGST = discountedPrice * 1.05;
+    //int totalPrice = tickets * pricePerTicket;
+   // float discountedPrice = totalPrice - discount;
+   // float totalPriceWithGST = discountedPrice * 1.05;
 
+srand(time(NULL));
+
+// Generates and prints a random number between 1 and 10
+int  randomnum = (rand() % 10) + 1;
+  pricePerTicket=randomnum*78;
+
+int totalPrice= pricePerTicket*tickets;
     cout << "\n\t\tReceipt\n";
     cout << "\tName: " << name << endl;
     cout << "\tAge: " << age << endl;
@@ -280,8 +280,9 @@ void generateReceipt(string name, int age,string from,string to, int tickets, st
     cout << "\tTrain: " << trainName << endl;
     cout << "\tDistance: " << distance << " km" << endl;
     cout << "\tNumber of tickets: " << tickets << endl;
+    cout << "\tprice per tickets: " << pricePerTicket<< endl;
     cout << "\tTotal Price: " << totalPrice << " Rs" << endl;
     cout << "\tDiscount: " << discount << " Rs" << endl;
-    cout << "\tPrice after discount: " << discountedPrice << " Rs" << endl;
-    cout << "\tTotal Price with GST: " << totalPriceWithGST << " Rs" << endl;
+    //cout << "\tPrice after discount: " << discountedPrice << " Rs" << endl;
+    //cout << "\tTotal Price with GST: " << totalPriceWithGST << " Rs" << endl;
 }
