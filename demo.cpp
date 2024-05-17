@@ -11,22 +11,22 @@ void login();
 void traindetails();
 void traincheck();
 void bookTicket();
-void generateReceipt(string name, int age,string from,string to, int tickets, string trainName, int distance, int pricePerTicket, int discount);
+void generateReceipt(string name, int age, string from, string to, int tickets, string trainName, int distance, int pricePerTicket, int discount);
 
 int main() {
     while (true) {
     int choice;
     cout <<"\n";
-    cout << "_______Welcome to Railway Ticket Booking System_______\n";
+    cout << "Welcome to Railway Ticket Booking System\n";
     cout <<"\n";
     cout << "\t\t1.   Register\n";
     cout << "\t\t2.   Login\n";
     cout << "\t\t3.   Train details\n";
     cout << "\t\t4.   Exit\n";
     cout <<"\n";
-    cout << "_____Enter your choice: ";
+    cout << "_Enter your choice: ";
     cin >> choice;
-
+        
     switch (choice) {
         
         case 1:
@@ -48,11 +48,11 @@ int main() {
 
         case 5:
             cout << "Exiting...\n";
-            cout << "______ code by   23AIML031\n\t\t23AIML035\n\t\t23AIML045";
+            cout << "______ code by 23AIML031\n\t\t23AIML035\n\t\t23AIML045";
 
             return 0;
         default:
-            cout << "Invalid choice ...!!!\nChoose a Valid Number   \n";
+            cout << "Invalid choice ...!!!\nChoose a Valid Number \n";
             break;
     }
     }
@@ -75,7 +75,7 @@ void registration()
     } else {
         cout << "Error opening file for registration.\n";
     }
-
+    
 }
 
 void login()
