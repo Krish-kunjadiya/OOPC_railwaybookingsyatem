@@ -17,7 +17,7 @@ int main() {
     while (true) {
     int choice;
     cout <<"\n";
-    cout << "~~~~~Welcome to Railway Ticket Booking System~~~~~\n";
+    cout << "_______Welcome to Railway Ticket Booking System_______\n";
     cout <<"\n";
     cout << "\t\t1.   Register\n";
     cout << "\t\t2.   Login\n";
