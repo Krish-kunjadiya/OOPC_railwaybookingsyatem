@@ -24,10 +24,11 @@ int main() {
     cout << "\t\t3.   Train details\n";
     cout << "\t\t4.   Exit\n";
     cout <<"\n";
-    cout << "~~~~~Enter your choice: ";
+    cout << "_____Enter your choice: ";
     cin >> choice;
 
     switch (choice) {
+        
         case 1:
             registration();
             break;
@@ -47,7 +48,7 @@ int main() {
 
         case 5:
             cout << "Exiting...\n";
-            cout << "~~~~~ code by   23AIML031\n\t\t23AIML035\n\t\t23AIML045";
+            cout << "______ code by   23AIML031\n\t\t23AIML035\n\t\t23AIML045";
 
             return 0;
         default:
@@ -84,7 +85,7 @@ void login()
     cin >> username;
     cout << "Enter password: ";
     cin >> password;
-
+    
     ifstream railusersFile("railusers.txt");
     string line;
     bool found = false;
@@ -204,8 +205,8 @@ void bookTicket() {
 
         case 3:
             selectedTrain = "Deccan Odyssey";
-           // distance = 250;
-           // pricePerTicket = 1200;
+            // distance = 250;
+            // priceperticket = 1200;
             break;
 
         case 4:
@@ -249,8 +250,7 @@ void bookTicket() {
             cout << "Invalid seat preference.\n";
             return;
     }
-
-
+    
     // Further logic for selecting train, seat preference, calculating fare, etc.
     //string selectedTrain = "Sample Train";
     //int distance = 500; // Example distance
@@ -264,7 +264,6 @@ void generateReceipt(string name, int age,string from,string to, int tickets, st
     //int totalPrice = tickets * pricePerTicket;
    // float discountedPrice = totalPrice - discount;
    // float totalPriceWithGST = discountedPrice * 1.05;
-
 srand(time(NULL));
 
 // Generates and prints a random number between 1 and 10
