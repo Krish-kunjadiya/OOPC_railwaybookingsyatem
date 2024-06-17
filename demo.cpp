@@ -211,20 +211,17 @@ void bookTicket() {
 
         case 4:
             selectedTrain = "Vande Bharat";
-            //distance = 150;
-            //pricePerTicket = 900;
+            
             break;
 
         case 5:
             selectedTrain = "Tejas Express";
-            //distance = 100;
-            //pricePerTicket = 120;
+           
             break;
 
         case 6:
             selectedTrain = "Gareeb Rath";
-            //distance = 100;
-            //pricePerTicket = 60;
+            
             break;
         default:
             cout << "Invalid train choice.\n";
