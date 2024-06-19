@@ -193,8 +193,7 @@ void bookTicket() {
     switch (trainChoice) {
         case 1:
             selectedTrain = "Maharajas' Express";
-            //distance = 500;
-           // pricePerTicket = 1000;
+          
             break;
 
         case 2:
